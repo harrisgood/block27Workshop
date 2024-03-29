@@ -7,6 +7,10 @@ const SignUpForm = ({setToken}) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    if(username.length<8){
+      alert('Please make your username at least 8 charcters')
+      return
+    }
     const API_URL = `https://fsa-jwt-practice.herokuapp.com/signup`
     try{
       const apiResponse = await fetch(API_URL,
@@ -38,7 +42,7 @@ const SignUpForm = ({setToken}) => {
         </label> <br />
 
         <label>
-          Password:  <input value={password} onChange={(e) => {setPassword(e.target.value)}} />
+          Password:  <input type='password' value={password} onChange={(e) => {setPassword(e.target.value)}} />
         </label> <br />
 
         <button>Submit</button>

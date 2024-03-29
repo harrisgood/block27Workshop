@@ -5,6 +5,7 @@ const Authenticate = ({token}) => {
 
   const [error, setError] = useState(null)
   const [successMessage, setSuccessMessage] = useState(null)
+  const [username, setUsername] = useState('')
 
   const handleClick = async () =>{
     try{
@@ -18,18 +19,21 @@ const Authenticate = ({token}) => {
     })
     const jsonObject = await apiResponse.json()
     
-    setSuccessMessage(jsonObject.message)
+    setSuccessMessage(jsonObject.success === true ? jsonObject.message : null)
+
+    
+    setUsername(jsonObject.data.username)
     }catch (error){
       setError(error.message)
     }
   }
   return (
-    <>
+    <div>
       <h2>Authenticate</h2>
-      <p>{successMessage ? successMessage : null}</p>
+      <p>{successMessage !== null ? `${successMessage} Welcome, ${username}!` : null}</p>
       <p>{error ? error : null}</p>
       <button onClick={handleClick}>Authenticate User Token</button>
-    </>
+    </div>
   )
 }
 
