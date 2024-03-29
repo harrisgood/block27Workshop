@@ -8,7 +8,7 @@ const SignUpForm = ({setToken}) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     if(username.length<8){
-      alert('Please make your username at least 8 charcters')
+      alert('Please make your username is at least 8 charcters long')
       return
     }
     const API_URL = `https://fsa-jwt-practice.herokuapp.com/signup`

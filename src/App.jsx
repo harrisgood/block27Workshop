@@ -7,8 +7,13 @@ const App = () => {
   const [token, setToken] = useState(null)
   return (
     <>
-      <Authenticate token={token} setToken={setToken} />
-      <SignUpForm token={token} setToken={setToken} />
+      <h1>Ultimate React Forms</h1>
+      <div>
+        <Authenticate token={token} setToken={setToken} />
+      </div>
+      <div>
+        <SignUpForm token={token} setToken={setToken} />
+      </div>
     </>
   )
 }

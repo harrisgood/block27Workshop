@@ -28,12 +28,12 @@ const Authenticate = ({token}) => {
     }
   }
   return (
-    <div>
+    <>
       <h2>Authenticate</h2>
       <p>{successMessage !== null ? `${successMessage} Welcome, ${username}!` : null}</p>
       <p>{error ? error : null}</p>
       <button onClick={handleClick}>Authenticate User Token</button>
-    </div>
+    </>
   )
 }
 

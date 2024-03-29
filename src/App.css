@@ -1,5 +1,14 @@
 body{
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  background-color: mediumturquoise;
+}
+div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: hotpink;
+  border: 7px double mediumturquoise;
 }
